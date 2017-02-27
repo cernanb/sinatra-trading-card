@@ -1,0 +1,8 @@
+<h2><%= @user.username %>'s Card Collection</h2>
+<% @cards.each do |card| %>
+  <div class="player-card">
+    <p>Player: <%= card.player %></p>
+    <p>Team: <%= card.team %></p>
+    <p>Year: <%= card.year %></p>
+  </div>
+<% end %>
