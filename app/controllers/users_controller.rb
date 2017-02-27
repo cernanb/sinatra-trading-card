@@ -22,6 +22,11 @@ class UsersController < ApplicationController
     erb :'users/show'
   end
 
+  get '/users/:id/edit' do
+    @user = User.find_by_id(params[:id])
+    erb :'users/edit'
+  end
+
   get '/signup' do
     erb :'users/new'
   end
