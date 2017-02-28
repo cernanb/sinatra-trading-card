@@ -21,9 +21,8 @@ class UsersController < ApplicationController
 
   get '/users/:id' do
 
-    @user = User.find_by_id(params[:id])
-    binding.pry
     if logged_in?
+      @user = User.find_by_id(params[:id])
       erb :'users/show'
     else
       redirect '/login'

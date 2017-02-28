@@ -3,6 +3,9 @@ User Stories
 User Account Stories
 1. As a user, I can sign up
 2. As a user, I can edit my profile
+3. As a user, I can view the other users profile pages
+4. As a user, I can view a list of other users
+  a. As a user, I can choose to view a user's profile or their card collection
 
 Session Stories
 1. As a user, I can log in
