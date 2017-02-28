@@ -2,8 +2,11 @@ class UsersController < ApplicationController
 
   get '/users' do
     @users = User.all
-
-    erb :'users/index'
+    if logged_in?
+      erb :'users/index'
+    else
+      redirect '/login'
+    end
   end
 
   post '/users' do
@@ -25,6 +28,16 @@ class UsersController < ApplicationController
   get '/users/:id/edit' do
     @user = User.find_by_id(params[:id])
     erb :'users/edit'
+  end
+
+  post '/users/:id' do
+
+    @user = User.find_by_id(params[:id])
+    @user.update(username: params[:username], first_name: params[:first_name], last_name: params[:last_name], email: params[:email])
+    if params[:password] != ""
+      @user.update(password: params[:password])
+    end
+    redirect "/users/#{@user.id}"
   end
 
   get '/signup' do
