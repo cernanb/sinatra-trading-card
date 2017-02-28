@@ -16,13 +16,16 @@
 <body>
   <div class="wrapper">
       <ul>
+
         <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
+        <%# if logged_in? %>
         <a href="/users">Users</a>
         <a href="/">My Cards</a>
         <a href="/">My Trade Offers</a>
-        <a href="/login">Login</a>
         <a href="/">Logout</a>
-        <a href="/signup">Signup</a>
+        <%# end %>
       </ul>
       <%= yield %>
 
