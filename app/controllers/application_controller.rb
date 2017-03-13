@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
 
 
     def logged_in?
-      binding.pry
+      
       !!current_user
     end
 
