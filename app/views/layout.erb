@@ -18,14 +18,16 @@
       <ul>
 
         <a href="/">Home</a>
+        <% if !logged_in? %>
         <a href="/login">Login</a>
         <a href="/signup">Signup</a>
-        <%# if logged_in? %>
+        <% end %>
+        <% if logged_in? %>
         <a href="/users">Users</a>
-        <a href="/">My Cards</a>
+        <a href="/users/<%=current_user.id%>/cards">My Cards</a>
         <a href="/">My Trade Offers</a>
         <a href="/">Logout</a>
-        <%# end %>
+        <% end %>
       </ul>
       <%= yield %>
 
